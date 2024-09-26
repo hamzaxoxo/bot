@@ -13,6 +13,9 @@ app.use(express.json());
 
 
 const client = new Client({
+    puppeteer: {
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    }
     authStrategy: new LocalAuth({
         clientId: "client-one"
     })
